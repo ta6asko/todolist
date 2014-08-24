@@ -10,8 +10,6 @@ default: &default
   timeout: 5000
   encoding: utf8
   host: localhost
-  username: postgres
-  password: root
 
 development:
   <<: *default
