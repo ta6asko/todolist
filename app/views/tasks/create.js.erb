@@ -1,0 +1,4 @@
+$('.new_task').bind('ajax:success', function() { 
+  $(this).parents('.project').find('.tasks').html("<%= escape_javascript(render 'tasks', project: @project) %>"); 
+  $(this).parents('.project').find('.text_field').val("");
+});   

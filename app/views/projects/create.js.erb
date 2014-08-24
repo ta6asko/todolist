@@ -1,0 +1,21 @@
+$(".projects").html("<%= escape_javascript(render 'projects') %>");
+$('.new_project').hide();
+$('.tasks').sortable({
+  axis: 'y',
+  dropOnEmpty: false,
+  cursor: 'crosshair',
+  items: 'li',
+  opacity: 0.9,
+  scroll: true,
+  update: function(){
+    var path = $(this).parents(".project").find(".tasks").attr("url");
+    $.ajax({
+      type: 'post',
+      data: $(this).parents(".project").find(".tasks").sortable('serialize'),
+      dataType: 'script',
+      complete: function(request){
+         $(this).parents(".project").find(".tasks").effect('highlight');
+      },
+         url: path})
+      }
+  });

@@ -1,0 +1,26 @@
+      <% project.tasks.each do |task| %>
+  <%= content_tag_for :li, task, class: "task clearfix" do %>
+        <div class="task_checkbox">
+          <%= check_box_tag "", "", task.status, class: "checkbox" %>
+        </div> 
+        <div class="content_task">
+        <div class="content_task2">
+          
+        
+          <%= form_for [project, task], remote: true do |f| %>
+          <%= f.text_field :name, class: "text_field_edit" %>
+          <%= f.date_field :deadline, class: "dead_line" %>
+          <%= f.submit  class: "task_input_button" %>
+          <% end %>       
+          <div class="task_name"><%= task.name%></div><div class="task_date">: <%= task.deadline%></div>
+        </div>
+        </div>
+        <div class="content_task_right">
+          <%= link_to image_tag("del_task.png"), project_task_path(project, task), remote: true, class: 'delete_task', method: :delete %>
+          <%= image_tag("2.png", class: 'task_title_strip') %> 
+          <%= image_tag("edit_task.png", class: 'edit_task_img') %>
+          <%= image_tag("2.png", class: 'task_title_strip') %> 
+          <%= image_tag("sorting.png", class: 'sorting_task', path: sort_down_project_task_path(project, task)) %>
+        </div><!-- content_task_right_end  -->
+      <%end%> 
+      <%end%> 

@@ -1,0 +1,29 @@
+
+
+<div class="main">
+<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+  <div class="title_top">
+    <h2>simple todo lists</h2>
+    <h3>from ruby garage</h3>
+  </div>
+  <div class="projects">
+   
+    <%= render "projects" %>
+  
+  </div><!-- projects_end-->
+
+  <div class="add_button">
+    <a href="" class="Add_list">
+      <%= image_tag("add_but_img.gif", class: 'add_img') %> 
+      <span class="">Add TODO List</span>
+    </a>
+  </div>
+  <%= form_for @project, remote: true do |f| %>
+  <%= f.text_field :name, class: "project_create_input"%>
+  <%= f.submit "Add Project", class: "inp" %>
+  <% end %> 
+  <div class="right">
+    <span>&#169Ruby Garage</span>
+  </div>
+</div><!--main_end
+  

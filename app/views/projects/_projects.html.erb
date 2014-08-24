@@ -1,0 +1,30 @@
+<% @projects.each do |project| %> 
+<div class="project" <%= project.id %>> 
+    <div class="project_title">
+      <%= image_tag("notepad.gif", class: 'project_title_notepad') %>
+      <span class="project_name"><%= project.name%></span>
+      <%= form_for project, remote: true do |f| %>
+      <%= f.text_field :name, class: "text_field_project" %>
+      <%= f.submit "Edit Task",  class: "project_edit_button" %>
+      <% end %>  
+      <div class="project_tools">
+        <%= link_to image_tag("del_proj.gif"), project_path(project), remote: true, class: 'delete_project', method: :delete %>
+        <%= image_tag("1.png", class: 'project_title_strip') %> 
+        <%= image_tag("edit_proj.gif", class: 'edit_project_img')%>
+      </div>
+    </div><!--project_title_end--> 
+    <div class="project_creator">
+      <%= image_tag("inp_img.gif", class: "task_creator_img") %>
+      <%= form_for [project, @task], remote: true do |f| %>
+      <%= f.text_field :name, class: "text_field" %>
+      <%= f.date_field :deadline, class: "dead_line" %>
+      <%= f.submit "Add Task", class: "task_input_button" %>
+      <% end %>
+    </div><!--project_creator_end-->
+    <ul class="tasks", url= <%= sort_project_tasks_path(project) %>>    
+      
+        <%= render "tasks/tasks", project: project %>
+      
+    </ul>
+  </div><!-- project_end-->
+<% end %>
