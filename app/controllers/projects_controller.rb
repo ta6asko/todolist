@@ -20,10 +20,8 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.find(params[:id])
     @project.update_attributes(project_params)
     @projects = current_user.projects
-    @task = @project.tasks.new
-    # unless @project.save   
-    #   render :nothing => true  
-    # end
+    @project.save
+    @task = @project.tasks.new  
   end
 
   def destroy
