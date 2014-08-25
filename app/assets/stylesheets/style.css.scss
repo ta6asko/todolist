@@ -23,6 +23,7 @@ body{
 }
 .project_title{
 	width: 700px;
+	height: 50px;
 	display: inline-block;
 	background: url(image_path('back_proj_title.png'));
 	border: 1px solid #315589;
@@ -32,12 +33,11 @@ body{
 	color: white;
 }
 .new_task{
-	margin-top: 2px;
+	margin-top: 7px;
 }
 .text_field {
 	width: 373px;
 	line-height: 26px;
-	// margin-top: 4px;
 }
 .dead_line{
 	line-height: 24px;
@@ -53,7 +53,6 @@ body{
 	line-height: 26px
 }
 .edit_project{
-	float: left;
 	margin-top: 10px;
 }
 .project_edit_input{
@@ -67,10 +66,6 @@ body{
 	margin: 11px;
 	float: left;
 }
-.edit_project_button{
-	
-}
-
 .edit_project{
 	display: none;
 }
@@ -87,8 +82,6 @@ body{
 	border-right: 1px solid #aaaaaa;
 	line-height: 26px;
 }
-
-
 .task_input_button:hover{
 	background: url(image_path('back_proj_inp_but_hov.png'));
 }
@@ -125,7 +118,7 @@ body{
 .tasks{
 	list-style-type: none;
 }
-.content_task2{
+.content_task_container{
 	border-left: 1px solid #efdadf;
 	float: left;
 	margin-left: 2px;
@@ -135,13 +128,9 @@ body{
 	width: 700px;
 	background: white;
 	list-style: none;
-	// border-top: 1px solid #E7EBEA;
 	border-bottom: 1px solid #E7EBEA;
 	border-left: 1px solid #E7EBEA;
 	border-right: 1px solid #E7EBEA;
-	// border-left: 1px solid #abafa2;
-	// display: inline-block;
-	  // margin-bottom: -5px;
 }
 .task_checkbox{
 	float: left;
@@ -174,7 +163,6 @@ body{
 	margin-bottom: 19px
 }
 .task_date{
-
 	padding-top: 18px;
 	float: right;
 	margin-right:10px;
@@ -301,7 +289,6 @@ li .handle {
 .inp:hover{
 	background: url(image_path('back_proj_inp_but_hov.png'));
 }
-
 .clearfix {
   *zoom: 1;
   &:before,

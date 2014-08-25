@@ -23,29 +23,29 @@ $(document).ready(function() {
       return false;
   });
 
-  $('.main').on('click','.edit_task_img', function() {
-      $(this).parents(".task").find(".edit_task").show();
-      return false;
-  });
+  //$('.main').on('click','.edit_task_img', function() {
+  //    return false;
+  //});
 
   $('.main').on('click','.edit_task_img', function() {
+      $(this).parents(".task").find(".edit_task").show();
       $(this).parents(".task").find(".task_name").hide();
-      return false;
-  });
-  $('.main').on('click','.edit_task_img', function() {
       $(this).parents(".task").find(".task_date").hide();
       return false;
   });
+  //$('.main').on('click','.edit_task_img', function() {
+  //    return false;
+  //});
 
-  $('.main').on('click','.edit_project_img', function() {
+  $('.main').on('click','.edit_project_img', function() {  
       $(this).parents(".project").find(".edit_project").show();
-      return false;
+      $(this).parents(".project").find(".project_name").hide();
+      return false; 
   });
 
-  $('.main').on('click','.edit_project_img', function() {
-      $(this).parents(".project").find(".project_name").hide();
-      return false;
-  });
+  //$('.main').on('click','.edit_project_img', function() { 
+  //    return false;
+  //});
 
   $('.main').on('change','.checkbox', function() {
     var path = $(this).parents(".task").find(".delete_task").attr("href");

@@ -1,3 +1,4 @@
 $('.edit_task').bind('ajax:success', function() { 
-  $(this).parents('.project').find('.tasks').html("<%= escape_javascript(render 'tasks', project: @project) %>"); 
+  $(this).parents('.project').find('.tasks').html("<%= escape_javascript(render 'tasks', project: @project) %>");
+  console.log("aaa") 
 });

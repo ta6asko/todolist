@@ -5,7 +5,7 @@
       <span class="project_name"><%= project.name%></span>
       <%= form_for project, remote: true do |f| %>
       <%= f.text_field :name, class: "text_field_project" %>
-      <%= f.submit "Edit Task",  class: "project_edit_button" %>
+      <%= f.submit "Edit Task", class: "project_edit_button" %>
       <% end %>  
       <div class="project_tools">
         <%= link_to image_tag("del_proj.gif"), project_path(project), remote: true, class: 'delete_project', method: :delete %>

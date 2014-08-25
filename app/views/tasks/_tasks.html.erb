@@ -4,15 +4,13 @@
           <%= check_box_tag "", "", task.status, class: "checkbox" %>
         </div> 
         <div class="content_task">
-        <div class="content_task2">
-          
-        
-          <%= form_for [project, task], remote: true do |f| %>
-          <%= f.text_field :name, class: "text_field_edit" %>
-          <%= f.date_field :deadline, class: "dead_line" %>
-          <%= f.submit  class: "task_input_button" %>
-          <% end %>       
-          <div class="task_name"><%= task.name%></div><div class="task_date">: <%= task.deadline%></div>
+          <div class="content_task_container">
+            <%= form_for [project, task], remote: true do |f| %>
+            <%= f.text_field :name, class: "text_field_edit" %>
+            <%= f.date_field :deadline, class: "dead_line" %>
+            <%= f.submit  class: "task_input_button" %>
+            <% end %>       
+            <div class="task_name"><%= task.name%></div><div class="task_date">: <%= task.deadline%></div>
         </div>
         </div>
         <div class="content_task_right">
