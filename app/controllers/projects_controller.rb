@@ -21,9 +21,9 @@ class ProjectsController < ApplicationController
     @project.update_attributes(project_params)
     @projects = current_user.projects
     @task = @project.tasks.new
-    unless @project.save   
-      render :nothing => true  
-    end
+    # unless @project.save   
+    #   render :nothing => true  
+    # end
   end
 
   def destroy
